@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased transition-colors dark:bg-slate-900 dark:text-slate-100;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full dark:bg-slate-600;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-elevated border border-slate-200/70 dark:bg-slate-800 dark:border-slate-700 dark:shadow-none;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 font-medium transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.btn-primary {
+  @apply btn bg-brand-gradient text-white shadow-glow hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0;
+}
+.btn-secondary {
+  @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600;
+}
+.btn-outline {
+  @apply btn border border-slate-300 text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700;
+}
+.btn-danger {
+  @apply btn bg-rose-600 text-white hover:bg-rose-700;
+}
+
+.input {
+  @apply w-full rounded-xl border border-slate-300 px-3 py-2 text-slate-800 bg-white transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 dark:bg-slate-900 dark:border-slate-600 dark:text-slate-100;
+}
+
+.label {
+  @apply block text-sm font-medium text-slate-600 mb-1 dark:text-slate-300;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+}
+
+.gradient-text {
+  @apply bg-brand-gradient bg-clip-text text-transparent;
+}
+
+/* Code viewer / Prism token colors (light) */
+.code-viewer {
+  direction: ltr;
+  text-align: left;
+  font-family: 'Fira Code', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.code-viewer .token.comment { color: #94a3b8; font-style: italic; }
+.code-viewer .token.keyword { color: #d946ef; }
+.code-viewer .token.string { color: #16a34a; }
+.code-viewer .token.number,
+.code-viewer .token.boolean { color: #ea580c; }
+.code-viewer .token.function { color: #2563eb; }
+.code-viewer .token.class-name { color: #0891b2; }
+.code-viewer .token.operator,
+.code-viewer .token.punctuation { color: #64748b; }
+.code-viewer .token.builtin { color: #7c3aed; }
+.code-viewer .code-line {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  border-left: 3px solid transparent;
+}
+.code-viewer .code-line.active {
+  background: rgba(58, 99, 247, 0.12);
+  border-left-color: #3a63f7;
+}
+
+/* Code viewer token colors (dark) */
+.dark .code-viewer .token.comment { color: #64748b; }
+.dark .code-viewer .token.keyword { color: #e879f9; }
+.dark .code-viewer .token.string { color: #4ade80; }
+.dark .code-viewer .token.number,
+.dark .code-viewer .token.boolean { color: #fb923c; }
+.dark .code-viewer .token.function { color: #60a5fa; }
+.dark .code-viewer .token.class-name { color: #22d3ee; }
+.dark .code-viewer .token.operator,
+.dark .code-viewer .token.punctuation { color: #94a3b8; }
+.dark .code-viewer .token.builtin { color: #c084fc; }
+.dark .code-viewer .code-line.active {
+  background: rgba(124, 58, 237, 0.2);
+  border-left-color: #a855f7;
+}
